@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import kivy
-from kivy.app import App
+from kivymd.app import App
 
 
 
