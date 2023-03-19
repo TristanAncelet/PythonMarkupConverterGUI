@@ -1,0 +1,39 @@
+#: include kv/conversion_selector.kv
+#: include kv/titlebar.kv
+
+<MainScreen@Screen>:
+  StackLayout:
+    orientation: "lr-tb"
+    ActionBar:
+      ActionView:
+        ActionPrevious:
+      
+    BoxLayout:
+      padding: 20
+
+      BoxLayout: #The sidebar
+        size_hint_x: None
+        width: 200
+
+        ConversionSelector:
+      
+      BoxLayout:
+        #orientation: "vertical"
+        padding: 5
+        margin: 5
+        
+        BoxLayout: 
+          margin: 5
+          orientation: "vertical"
+          TitleBar:
+            text: "Input"
+          TextInput:
+      
+        BoxLayout:
+          margin: 5
+          orientation: "vertical"
+          TitleBar2:
+            text: "Output"
+          TextInput:
+          
+      

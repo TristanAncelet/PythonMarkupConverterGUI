@@ -1,0 +1,55 @@
+<ResizingBoxlayout@BoxLayout>:
+  pos_hint: { "top":1 }
+  padding: 4
+  size_hint: 1,None
+  height: self.minimum_height
+  orientation: "vertical"
+  
+<Selector@BoxLayout>:
+  padding: 2
+  size_hint_y: None
+  orientation: "horizontal"
+  height: 50
+  canvas.before:
+    Rectangle:
+      size: self.size
+      pos: self.pos
+    Color:
+      rgba: 0.5, 0, 0.5
+  
+<ConversionSelector@StackLayout>:
+  orientation: "lr-tb"
+  pos_hint: {"top":1}
+
+  canvas.before:
+    Rectangle:
+      size: self.size
+      pos: self.pos
+    
+    Color: 
+      rgba: 0.5,0.7,0.7,1
+
+  ResizingBoxlayout:
+    canvas.before:
+      Rectangle:
+        size: self.size
+        pos: self.pos
+    
+      Color: 
+        rgba: 0.5,0.7,0.7,1
+
+
+    Selector:
+      Label: 
+        text: "From"
+      Button:
+        text: "Press me"
+
+    Selector:
+      Label: 
+        text: "To"
+      Button:
+        text: "Press me"
+
+
+  
