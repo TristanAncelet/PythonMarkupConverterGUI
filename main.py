@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
 import kivy
-from kivymd.app import App
+from kivymd.app import MDApp
 
 
 
-class MainApp(App):
+class MainApp(MDApp):
     pass
 
 

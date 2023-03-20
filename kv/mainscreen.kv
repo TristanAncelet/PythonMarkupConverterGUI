@@ -1,26 +1,38 @@
 #: include kv/conversion_selector.kv
 #: include kv/titlebar.kv
 
-<MainScreen@Screen>:
+<MainScreen@MDScreen>:
+  input_zone: input_zone
+  output_zone: output_zone
+  auto_conversion_button: auto_conversion_button
+
   StackLayout:
     orientation: "lr-tb"
     ActionBar:
       ActionView:
         ActionPrevious:
+        ActionButton:
+          text: "Settings"
       
     BoxLayout:
-      padding: 20
-
+      #padding: 20
+      spacing: 5
       BoxLayout: #The sidebar
         size_hint_x: None
         width: 200
-
         ConversionSelector:
-      
-      BoxLayout:
+          canvas.before:
+            Color:
+              rgba: 1,1,1,1
+            Rectangle:
+              size: self.size
+              pos: self.pos
+
+     
+      MDGridLayout:
+        cols: 1
         #orientation: "vertical"
-        padding: 5
-        margin: 5
+        col_default_width: 4
         
         BoxLayout: 
           margin: 5
@@ -28,12 +40,41 @@
           TitleBar:
             text: "Input"
           TextInput:
+            id: input_zone
+            on_text:
+              if auto_conversion_button.state == 'down': output_zone.text = self.text 
       
         BoxLayout:
           margin: 5
           orientation: "vertical"
-          TitleBar2:
+          TitleBar:
             text: "Output"
           TextInput:
-          
+            id: output_zone
+      
+      GridLayout:
+        cols: 1
+
+        row_force_default: True
+        row_default_height: 50
+
+        size_hint_x: None
+        width: 200
+        canvas.before:
+          Color:
+            rgba: 0.2,0.2,0.2,1
+          Rectangle:
+            size: self.size
+            pos: self.pos
+        Button:
+          text: "Trigger Conversion"
+          on_press:
+            output_zone.text = input_zone.text
+        ToggleButton:
+          id: auto_conversion_button
+          text: "Enable Auto-Conversion"
+          on_release: 
+            if self.state == "down": self.text = self.text.replace("Enable","Disable"); print("Auto-Conversion Disabled")
+            else: self.text = self.text.replace("Disable","Enable"); print("Auto-Conversion Enabled")
+        
       
