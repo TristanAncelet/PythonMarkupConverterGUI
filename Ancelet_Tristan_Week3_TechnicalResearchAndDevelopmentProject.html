@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ancelet_Tristan_Week3_TechnicalResearchAndDevelopmentProject.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<style>
+
+.underlined {
+    text-decoration: underline;
+}
+
+paper-title {
+    display: block;
+    margin: auto;
+    max-width: fit-content;
+    text-align: center;
+    font-size:  30px;
+    margin-bottom: 50px;
+    text-decoration: underline;
+}
+
+subtitle {
+    display: block;
+    font-size:  20px;
+    text-align: center;
+}
+
+section {
+    display: block;
+    /*border: 1px solid black;
+    border-radius: 5px;*/
+    padding: 20px;
+    margin-top: 20px;
+}
+
+subject {
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+}
+</style>
+<p>Name: Tristan Ancelet<br>
+Course: SDV4116-O<br>
+Term: C202303<br>
+Section: 01</p>
+<p><br>
+<paper-title> Technical Research &amp; Development Project </paper-title></p>
+<p>For my project I will be creating a Markup Language Conversion Application. The technology that will be involved (at the start) is the following: Python and Markup Languages (ML). Python will be used to facilitate the conversion from one ML to another. The MLs are used to store data into a format that is easily transferable and parsible between different software and systems. To begin with, everything is just being used to create software that will be able to convert one ML to another. The end goal for the next iteration of this project however is to be able to setup a simple API server that would allow for one type of request to come in and be converted into another (REST/JSON -&gt; SOAP/XML).</p>
+<p><br>
+<br>
+Using Kivy and Python I am able to create templated and functional UI that limits the ammount of actual code I need to type overall. This is due to kivy being a fully functional UI library with the option to template UI (like using XML in android studio) using Kivy's kv language. This optional language allows for templating the UI without needing to spend time creating UI elements using python code. Although creating actual python classes can extend the control the developer has on the way the UI functions and behaves. Another feature of this project would be the markup language conversion library. It is a library, written in python, that will be designed to be as extendable and pluggable as possible. This would allow the library to be used regardless of what it is interfacing with. Lastly another feature of the application would the persistant storage of the users history. This would allow them to be able to recall and recover previous states of the the conversion. Much like how git keeps tracks of changes in development projects.</p>
+<p><br>
+<br>
+Nearly all industries and software are connected to the internet in some way or form. Many of these systems use API to tranfer data between one another. These API often format data in different ways. Two of the most well know API are SOAP (which used XML) and REST (which primarily uses JSON). Each type of API has their strong points, but often integrations between one another can be difficult to implement due to the different ways that these API format data to be transfered.</p>
+<p><br>
+<br>
+Currently there are only a few features built into the project so far. Firstly the actual UI has been implemented in a rudimentary way, it is at the moment very simple and without any complex system integrations for event handling. This was done using Kivy and it's kv templating language. Which functions similarly to how android development uses XML files, which allows for widgits or views to be templated and reused throughtout the application regardless of placement. Next we have the Conversion library. This library will be modular and will be used and implemented via the Stratagey Design Pattern. This will allow it to function via regardless of the UI type it is meant to be integrate with. Lastly I have been implementing a Data Object and View Object for each part of the application that requires data to function. This is being implemented for both the user provided data in the editor view and for persistant data stored and retrieved from the local SQLite database. As this will allow for much easier development and more understandable code.</p>
+<p><br>
+<br>
+Many things went as expected during the development of this project. Kivy and Python allowed for very quick development of UI that is cross-platform for nearly all operating systems with the exception of iOS in most cases. Additionally with python there are already libraries/modules that preform many of the simple conversions from and to most markup languages. So on that front all that is needed is to use the builtin modules and download others that I do now currently have. These will allow me to develop the code necessary for me tie all of the different parts of the project together into a useful tool.</p>
+<p><br>
+<br>
+Thankfully this early into the project I have not had too many things go wrong yet. The most trouble I've experienced is the fickle nature of Kivy templated UI using the kv language. As when templating a element/widget that will be used multiple times there can be issues that may occur. One of the primary issues happens when specifiying a background color for the templated widget without the class being extended in python code, as it will only be applied to the last object that was created in the templated view.</p>
+<p><br>
+<br>
+During the development and research of this project, the end goal of the next iteration has definately changed. As I learn more about what each type of API supports, it makes the way I will implement the API server idea. Although in respect to this iteration, not much will change. As with the utilities that python offers allows for the brunt of this project to be handled easily.</p>
+<p><br>
+<br>
+After my experiences developing this project so far I believe that this project is still very possible. As the technology around my project is both very modular and can be implemented reliably using OOP. This because Python allows for a great degree of freedom when designing software, as it is almost universally supported across all operating systems and can even be compiled for extra speed and resource efficency with the help of projects like PyPy or CPython.</p>
+<p><br>
+<br>
+<subtitle> References </subtitle></p>
+<ul>
+<li>GeeksforGeeks. (2022, August 29). Difference between REST API and SOAP API. https://www.geeksforgeeks.org/difference-between-rest-api-and-soap-api/</li>
+<li>Wikipedia contributors. (2023, February 21). Markup language. Wikipedia. https://en.wikipedia.org/wiki/Markup_language</li>
+<li>Kv language — Kivy 2.1.0 documentation. (n.d.). https://kivy.org/doc/stable/guide/lang.html</li>
+</ul>
+
+</body>
+</html>
