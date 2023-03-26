@@ -1,5 +1,7 @@
 #: include kv/conversion_selector.kv
 #: include kv/titlebar.kv
+#: import json json
+#: import yaml yaml
 
 <MainScreen@MDScreen>:
   input_zone: input_zone
@@ -34,7 +36,7 @@
         #orientation: "vertical"
         col_default_width: 4
         
-        BoxLayout: 
+        BoxLayout: # Yaml 
           margin: 5
           orientation: "vertical"
           TitleBar:
@@ -42,9 +44,11 @@
           TextInput:
             id: input_zone
             on_text:
-              if auto_conversion_button.state == 'down': output_zone.text = self.text 
+              text=None
+              if auto_conversion_button.state == 'down': text=yaml.safe_load(input_zone.text)
+              if text is not None: output_zone = json.dumps(text)
       
-        BoxLayout:
+        BoxLayout: # Json
           margin: 5
           orientation: "vertical"
           TitleBar:
@@ -69,12 +73,14 @@
         Button:
           text: "Trigger Conversion"
           on_press:
-            output_zone.text = input_zone.text
+            try: text=yaml.safe_load(input_zone.text); output_zone.text = json.dumps(text)
+            except: pass
+
         ToggleButton:
           id: auto_conversion_button
-          text: "Enable Auto-Conversion"
+          text: "Disable Auto-Conversion" if self.state == 'down' else "Enable Auto-Conversion\n(not implemented)"
+          disabled: True
           on_release: 
-            if self.state == "down": self.text = self.text.replace("Enable","Disable"); print("Auto-Conversion Disabled")
-            else: self.text = self.text.replace("Disable","Enable"); print("Auto-Conversion Enabled")
+            print( "Auto-Conversion Disabled" if self.state == 'down' else "Auto-Conversion Enabled")
         
       
